@@ -1,16 +1,34 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchAllProducts, fetchAllProductsByFilter } from './ProductAPI';
+import { fetchAllProducts, fetchAllProductsByFilter, fetchBrands, fetchCategories } from './ProductAPI';
 
 const initialState = {
   products: [],
+  brands: [],
+  categories: [],
   status: 'idle',
-  totalItems: 30
+  totalItems: 0
 };
 
 export const fetchAllProductsAsync = createAsyncThunk(
   'Products/fetchAllProducts',
   async () => {
     const response = await fetchAllProducts();
+    return response.data;
+  }
+);
+
+export const fetchBrandsAsync = createAsyncThunk(
+  'Products/fetchBrands',
+  async () => {
+    const response = await fetchBrands();
+    return response.data;
+  }
+);
+
+export const fetchCategoriesAsync = createAsyncThunk(
+  'Products/fetchCategories',
+  async () => {
+    const response = await fetchCategories();
     return response.data;
   }
 );
@@ -48,6 +66,20 @@ export const productsSlice = createSlice({
         state.status = 'idle';
         state.products = action.payload.products.data;
         state.totalItems = action.payload.totalItems;
+      })
+      .addCase(fetchBrandsAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchBrandsAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.brands = action.payload;
+      })
+      .addCase(fetchCategoriesAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchCategoriesAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.categories = action.payload;
       });
   },
 });
@@ -57,5 +89,7 @@ export const { increment } = productsSlice.actions;
 
 export const selectAllProducts = (state) => state.product.products;
 export const selectTotalItems = (state) => state.product.totalItems;
+export const selectBrands = (state) => state.product.brands;
+export const selectCategories = (state) => state.product.categories;
 
 export default productsSlice.reducer;
