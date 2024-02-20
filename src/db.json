@@ -48,7 +48,9 @@
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
-      "images": ["https://cdn.dummyjson.com/product-images/3/1.jpg"]
+      "images": [
+        "https://cdn.dummyjson.com/product-images/3/1.jpg"
+      ]
     },
     {
       "id": 4,
@@ -1426,7 +1428,9 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://cdn.dummyjson.com/product-images/78/thumbnail.jpg",
-      "images": ["https://cdn.dummyjson.com/product-images/78/thumbnail.jpg"]
+      "images": [
+        "https://cdn.dummyjson.com/product-images/78/thumbnail.jpg"
+      ]
     },
     {
       "id": 79,
@@ -1439,7 +1443,9 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://cdn.dummyjson.com/product-images/79/thumbnail.jpg",
-      "images": ["https://cdn.dummyjson.com/product-images/79/1.jpg"]
+      "images": [
+        "https://cdn.dummyjson.com/product-images/79/1.jpg"
+      ]
     },
     {
       "id": 80,
@@ -1834,7 +1840,7 @@
       ]
     }
   ],
-  "brands":[
+  "brands": [
     {
       "value": "Apple",
       "label": "Apple",
@@ -2226,7 +2232,7 @@
       "checked": false
     }
   ],
-  "categories":[
+  "categories": [
     {
       "value": "smartphones",
       "label": "smartphones",
@@ -2327,6 +2333,35 @@
       "label": "lighting",
       "checked": false
     }
+  ],
+  "users": [
+    {
+      "id": "55ab",
+      "email": "test@gmail.com",
+      "password": "Qwerty123",
+      "confirmPassword": "Qwerty123"
+    }
+  ],
+  "cart": [
+    {
+      "id": 2,
+      "title": "iPhone X",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": 899,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
+      "images": [
+        "https://cdn.dummyjson.com/product-images/2/1.jpg",
+        "https://cdn.dummyjson.com/product-images/2/2.jpg",
+        "https://cdn.dummyjson.com/product-images/2/3.jpg",
+        "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
+      ],
+      "quantity": 1,
+      "user": "55ab"
+    }
   ]
-
 }
