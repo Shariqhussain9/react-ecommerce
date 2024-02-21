@@ -46,7 +46,6 @@ export function updateCart(update) {
 }
 
 export function deleteItemFromCart(itemId) {
-  console.log(itemId);
   return new Promise(async (resolve) => {
     const response = await fetch('http://localhost:3000/cart/'+itemId, {
       method: 'DELETE',
@@ -58,3 +57,13 @@ export function deleteItemFromCart(itemId) {
   );
 }
 
+export function resetCart(userId) {
+  return new Promise(async (resolve) => {
+    const response = await fetchItemByUserId(userId);
+    const items = response.data;
+    for (let item of items){
+      await deleteItemFromCart(item.id);
+    }
+    resolve({ status: 'success' });
+  });
+}

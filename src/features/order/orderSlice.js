@@ -20,8 +20,8 @@ export const orderSlice = createSlice({
   name: 'order',
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
+    resetOrder : (state) => {
+      state.currentOrder= null;
     }
   },
 
@@ -33,13 +33,14 @@ export const orderSlice = createSlice({
       .addCase(createOrderAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         state.orders.push(action.payload);
+        state.currentOrder = action.payload;
       });
   },
 });
 
-// export const { increment } = counterSlice.actions;
+export const { resetOrder } = orderSlice.actions;
 
+export const selectCurrentOrder = (state) => state.order.currentOrder;
 
-export const selectCount = (state) => state.counter.value;
 
 export default orderSlice.reducer;

@@ -2479,51 +2479,11 @@
       ],
       "quantity": 1,
       "user": "55ab"
-    },
-    {
-      "id": "38",
-      "title": "sublimation plain kids tank",
-      "description": "sublimation plain kids tank tops wholesale",
-      "price": 100,
-      "discountPercentage": 11.12,
-      "rating": 4.8,
-      "stock": 20,
-      "brand": "Soft Cotton",
-      "category": "tops",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/38/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/38/1.png",
-        "https://cdn.dummyjson.com/product-images/38/2.jpg",
-        "https://cdn.dummyjson.com/product-images/38/3.jpg",
-        "https://cdn.dummyjson.com/product-images/38/4.jpg"
-      ],
-      "quantity": 2,
-      "user": "aba2"
-    },
-    {
-      "id": "30",
-      "title": "Key Holder",
-      "description": "Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality",
-      "price": 30,
-      "discountPercentage": 2.92,
-      "rating": 4.92,
-      "stock": 54,
-      "brand": "Golden",
-      "category": "home-decoration",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/30/1.jpg",
-        "https://cdn.dummyjson.com/product-images/30/2.jpg",
-        "https://cdn.dummyjson.com/product-images/30/3.jpg",
-        "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg"
-      ],
-      "quantity": 1,
-      "user": "aba2"
     }
   ],
   "orders": [
     {
-      "id": "bc67",
+      "id": "6fe4",
       "items": [
         {
           "id": "38",
@@ -2542,7 +2502,7 @@
             "https://cdn.dummyjson.com/product-images/38/3.jpg",
             "https://cdn.dummyjson.com/product-images/38/4.jpg"
           ],
-          "quantity": 2,
+          "quantity": 1,
           "user": "aba2"
         },
         {
@@ -2566,8 +2526,8 @@
           "user": "aba2"
         }
       ],
-      "totalAmount": 230,
-      "totalItems": 3,
+      "totalAmount": 130,
+      "totalItems": 2,
       "user": {
         "id": "aba2",
         "email": "demo@gmail.com",
@@ -2586,7 +2546,7 @@
         ]
       },
       "paymentMethod": "cash",
-      "selectedAdress": {
+      "selectedAddress": {
         "name": "Shariq Hussain",
         "email": "demo@gmail.com",
         "phone": "1234567890",
@@ -2594,7 +2554,8 @@
         "city": "BAREILLY",
         "state": "Uttar Pradesh",
         "pinCode": "243502"
-      }
+      },
+      "status": "pending"
     }
   ]
 }

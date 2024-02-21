@@ -1,62 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import {
   deleteItemFromCartAsync,
   selectItems,
   updateCartAsync,
 } from "../features/Cart/cartSlice";
 import { useForm } from "react-hook-form";
-import { createOrderAsync } from "../features/order/orderSlice";
+import { createOrderAsync, selectCurrentOrder } from "../features/order/orderSlice";
 import { selectLoggedInUser, updateUserAsync } from "../features/auth/authSlice";
 import { useState } from "react";
-
-const products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "$90.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "$32.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-];
-
-const addresses = [
-  {
-    name: "John Wick",
-    email: "Johnw@gmail.com",
-    street: "12/24 Anand Vihar",
-    city: "Delhi",
-    pincode: 11001,
-    state: "Delhi",
-    phone: 11020101,
-  },
-  {
-    name: "John Doe",
-    email: "Johnd@gmail.com",
-    street: "12/24 SouthCity",
-    city: "Banglore",
-    pincode: 55005,
-    state: "Karnatka",
-    phone: 99099878,
-  },
-];
 
 function Checkout() {
   const dispatch = useDispatch();
@@ -70,8 +22,9 @@ function Checkout() {
 
   const user = (useSelector(selectLoggedInUser));
   const items = useSelector(selectItems);
-  const [selectedAdress, setSelectedAddress] = useState(null);
+  const [selectedAddress, setSelectedAddress] = useState(null);
   const [paymentMethod, setPaymentMethod] = useState(null);
+  const currentOrder = useSelector(selectCurrentOrder);
 
   const totalAmount = items.reduce(
     (amount, item) => item.price * item.quantity + amount,
@@ -98,8 +51,16 @@ function Checkout() {
   }
 
   const handleOrder = e => {
-    if(selectedAdress && paymentMethod){
-      const order = {items, totalAmount, totalItems, user, paymentMethod, selectedAdress};
+    if(selectedAddress && paymentMethod){
+      const order = {
+        items, 
+        totalAmount, 
+        totalItems, 
+        user, 
+        paymentMethod, 
+        selectedAddress,
+        status: 'pending'
+      };
       console.log(order);
       dispatch(createOrderAsync(order));
     }else{
@@ -109,6 +70,8 @@ function Checkout() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      {!items && <Navigate to='/' replace={true}/>}
+      {currentOrder && <Navigate to={`/order-success/${currentOrder.id}`} replace={true}/>}
       <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
         <div className="lg:col-span-3">
           <form
