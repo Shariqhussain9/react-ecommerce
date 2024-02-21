@@ -59,7 +59,7 @@ export const cartSlice = createSlice({
       })
       .addCase(addToCartAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.item.push(action.payload);
+        state.items.push(action.payload);
       })
       .addCase(fetchItemByUserIdAsync.pending, (state) => {
         state.status = 'loading';

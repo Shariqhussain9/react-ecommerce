@@ -6,6 +6,7 @@ import { Navigate, useParams } from 'react-router-dom'
 import { fetchProductByIdAsync, selectProductById } from '../ProductSlice'
 import { addToCart } from '../../Cart/cartAPI'
 import { selectLoggedInUser } from '../../auth/authSlice'
+import { addToCartAsync } from '../../Cart/cartSlice'
 
 
 const colors = [
@@ -50,8 +51,8 @@ export default function ProductDetail() {
   const isLoading = !product;
 
   const handleCart = (e) => {
-    e.preventDefault();
-    dispatch(addToCart({...product, quantity: 1, user: user.id}))
+    // e.preventDefault();
+    dispatch(addToCartAsync({...product, quantity: 1, user: user.id}))
   }
   
   useEffect(()=> {
@@ -162,7 +163,7 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            <form className="mt-10" >
+            <div className="mt-10" >
               {/* Colors */}
               <div>
                 <h3 className="text-sm font-medium text-gray-900">Color</h3>
@@ -268,7 +269,7 @@ export default function ProductDetail() {
               >
                 Add to bag
               </button>
-            </form>
+            </div>
           </div>
 
           <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
