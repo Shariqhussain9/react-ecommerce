@@ -43,3 +43,11 @@ export function updateUser(update) {
   }
   );
 }
+
+export function signOut() {
+  return new Promise(async (resolve) => {
+    
+    resolve({data : 'success'});
+  }
+  );
+}

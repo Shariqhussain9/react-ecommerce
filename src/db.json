@@ -2438,7 +2438,17 @@
       "email": "test@gmail.com",
       "password": "Qwerty123",
       "confirmPassword": "Qwerty123",
-      "addresses": []
+      "addresses": [
+        {
+          "name": "ZAKIR HUSSAIN",
+          "email": "shariqhussain8@gmail.com",
+          "phone": "09897829933",
+          "street": "NAI MASJID NAI BASTI",
+          "city": "BAREILLY",
+          "state": "Uttar Pradesh",
+          "pinCode": "243502"
+        }
+      ]
     },
     {
       "id": "aba2",
@@ -2458,29 +2468,7 @@
       ]
     }
   ],
-  "cart": [
-    {
-      "id": "9",
-      "title": "Infinix INBOOK",
-      "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
-      "price": 1099,
-      "discountPercentage": 11.83,
-      "rating": 4.54,
-      "stock": 96,
-      "brand": "Infinix",
-      "category": "laptops",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/9/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/9/1.jpg",
-        "https://cdn.dummyjson.com/product-images/9/2.png",
-        "https://cdn.dummyjson.com/product-images/9/3.png",
-        "https://cdn.dummyjson.com/product-images/9/4.jpg",
-        "https://cdn.dummyjson.com/product-images/9/thumbnail.jpg"
-      ],
-      "quantity": 1,
-      "user": "55ab"
-    }
-  ],
+  "cart": [],
   "orders": [
     {
       "id": "6fe4",
@@ -2550,6 +2538,195 @@
         "name": "Shariq Hussain",
         "email": "demo@gmail.com",
         "phone": "1234567890",
+        "street": "NAI MASJID NAI BASTI",
+        "city": "BAREILLY",
+        "state": "Uttar Pradesh",
+        "pinCode": "243502"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "aeb2",
+      "items": [
+        {
+          "id": "2",
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/2/1.jpg",
+            "https://cdn.dummyjson.com/product-images/2/2.jpg",
+            "https://cdn.dummyjson.com/product-images/2/3.jpg",
+            "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "55ab"
+        }
+      ],
+      "totalAmount": 899,
+      "totalItems": 1,
+      "user": {
+        "id": "55ab",
+        "email": "test@gmail.com",
+        "password": "Qwerty123",
+        "confirmPassword": "Qwerty123",
+        "addresses": [
+          {
+            "name": "ZAKIR HUSSAIN",
+            "email": "shariqhussain8@gmail.com",
+            "phone": "09897829933",
+            "street": "NAI MASJID NAI BASTI",
+            "city": "BAREILLY",
+            "state": "Uttar Pradesh",
+            "pinCode": "243502"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "ZAKIR HUSSAIN",
+        "email": "shariqhussain8@gmail.com",
+        "phone": "09897829933",
+        "street": "NAI MASJID NAI BASTI",
+        "city": "BAREILLY",
+        "state": "Uttar Pradesh",
+        "pinCode": "243502"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "a704",
+      "items": [
+        {
+          "id": "26",
+          "title": "Plant Hanger For Home",
+          "description": "Boho Decor Plant Hanger For Home Wall Decoration Macrame Wall Hanging Shelf",
+          "price": 41,
+          "discountPercentage": 17.86,
+          "rating": 4.08,
+          "stock": 131,
+          "brand": "Boho Decor",
+          "category": "home-decoration",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/26/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/26/1.jpg",
+            "https://cdn.dummyjson.com/product-images/26/2.jpg",
+            "https://cdn.dummyjson.com/product-images/26/3.jpg",
+            "https://cdn.dummyjson.com/product-images/26/4.jpg",
+            "https://cdn.dummyjson.com/product-images/26/5.jpg",
+            "https://cdn.dummyjson.com/product-images/26/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "55ab"
+        },
+        {
+          "id": "41",
+          "title": "NIGHT SUIT",
+          "description": "NIGHT SUIT RED MICKY MOUSE..  For Girls. Fantastic Suits.",
+          "price": 55,
+          "discountPercentage": 15.05,
+          "rating": 4.65,
+          "stock": 21,
+          "brand": "RED MICKY MOUSE..",
+          "category": "womens-dresses",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/41/thumbnail.webp",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/41/1.jpg",
+            "https://cdn.dummyjson.com/product-images/41/2.webp",
+            "https://cdn.dummyjson.com/product-images/41/3.jpg",
+            "https://cdn.dummyjson.com/product-images/41/4.jpg",
+            "https://cdn.dummyjson.com/product-images/41/thumbnail.webp"
+          ],
+          "quantity": 1,
+          "user": "55ab"
+        }
+      ],
+      "totalAmount": 96,
+      "totalItems": 2,
+      "user": {
+        "id": "55ab",
+        "email": "test@gmail.com",
+        "password": "Qwerty123",
+        "confirmPassword": "Qwerty123",
+        "addresses": [
+          {
+            "name": "ZAKIR HUSSAIN",
+            "email": "shariqhussain8@gmail.com",
+            "phone": "09897829933",
+            "street": "NAI MASJID NAI BASTI",
+            "city": "BAREILLY",
+            "state": "Uttar Pradesh",
+            "pinCode": "243502"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "ZAKIR HUSSAIN",
+        "email": "shariqhussain8@gmail.com",
+        "phone": "09897829933",
+        "street": "NAI MASJID NAI BASTI",
+        "city": "BAREILLY",
+        "state": "Uttar Pradesh",
+        "pinCode": "243502"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "3cae",
+      "items": [
+        {
+          "id": "9",
+          "title": "Infinix INBOOK",
+          "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
+          "price": 1099,
+          "discountPercentage": 11.83,
+          "rating": 4.54,
+          "stock": 96,
+          "brand": "Infinix",
+          "category": "laptops",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/9/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/9/1.jpg",
+            "https://cdn.dummyjson.com/product-images/9/2.png",
+            "https://cdn.dummyjson.com/product-images/9/3.png",
+            "https://cdn.dummyjson.com/product-images/9/4.jpg",
+            "https://cdn.dummyjson.com/product-images/9/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "55ab"
+        }
+      ],
+      "totalAmount": 1099,
+      "totalItems": 1,
+      "user": {
+        "id": "55ab",
+        "email": "test@gmail.com",
+        "password": "Qwerty123",
+        "confirmPassword": "Qwerty123",
+        "addresses": [
+          {
+            "name": "ZAKIR HUSSAIN",
+            "email": "shariqhussain8@gmail.com",
+            "phone": "09897829933",
+            "street": "NAI MASJID NAI BASTI",
+            "city": "BAREILLY",
+            "state": "Uttar Pradesh",
+            "pinCode": "243502"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "ZAKIR HUSSAIN",
+        "email": "shariqhussain8@gmail.com",
+        "phone": "09897829933",
         "street": "NAI MASJID NAI BASTI",
         "city": "BAREILLY",
         "state": "Uttar Pradesh",
