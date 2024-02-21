@@ -2447,13 +2447,13 @@
       "confirmPassword": "Qwerty123",
       "addresses": [
         {
-          "name": "Shariq Hussain",
+          "name": "Shariq H",
           "email": "demo@gmail.com",
-          "phone": "1234567890",
-          "street": "NAI MASJID NAI BASTI",
           "city": "BAREILLY",
           "state": "Uttar Pradesh",
-          "pinCode": "243502"
+          "pinCode": "243502",
+          "phone": "1234567890",
+          "street": "NAI MASJID NAI BASTI"
         }
       ]
     }

@@ -20,6 +20,10 @@ import { fetchItemByUserIdAsync } from './features/Cart/cartSlice';
 import PageNotFound from './pages/404';
 import OrderSuccess from './pages/OrderSuccess';
 import UserOrder from './features/user/components/userOrder';
+import UserProfile from './features/user/components/userProfile';
+import UserOrderPage from './pages/UserOrderPage';
+import UserProfilePage from './pages/UserProfilePage';
+import { fetchLoggedInUserAsync } from './features/user/userSlice';
 
 const router = createBrowserRouter([
   {
@@ -52,7 +56,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/orders',
-    element: (<UserOrder/>)
+    element: (<UserOrderPage/>)
+  },
+  {
+    path: '/profile',
+    element: (<UserProfilePage/>)
   },
   {
     path: '*',
@@ -67,7 +75,8 @@ function App() {
 
   useEffect(() => {
     if(user){
-      dispatch(fetchItemByUserIdAsync(user.id));
+      // dispatch(fetchItemByUserIdAsync(user.id));
+      dispatch(fetchLoggedInUserAsync(user.id));
     }
   }, [dispatch, user]);
 
