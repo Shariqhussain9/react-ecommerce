@@ -8,6 +8,7 @@ import {
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectItems } from "../Cart/cartSlice";
+import { selectLoggedInUser } from "../auth/authSlice";
 
 const user = {
   name: "Tom Cook",
@@ -17,8 +18,9 @@ const user = {
 };
 
 const navigation = [
-  { name: "Dashboard", link: "#", current: true },
-  { name: "Team", link: "#", current: false },
+  { name: "Dashboard", link: "/", user: true },
+  { name: "Team", link: "#", user: true },
+  { name: "Admin", link: "/admin", admin: true },
 ];
 const userNavigation = [
   { name: "My Profile", link: "/profile" },
@@ -32,6 +34,7 @@ function classNames(...classes) {
 
 function Navbar({ children }) {
   const items = useSelector(selectItems);
+  const user = useSelector(selectLoggedInUser);
   return (
     <div>
       <div className="min-h-full">
@@ -52,8 +55,8 @@ function Navbar({ children }) {
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
-                        {navigation.map((item) => (
-                          <Link
+                        {navigation.map((item) => 
+                        item[user.role] ? (<Link
                             key={item.name}
                             to={item.link}
                             className={classNames(
@@ -66,7 +69,7 @@ function Navbar({ children }) {
                           >
                             {item.name}
                           </Link>
-                        ))}
+                        ) : null )}
                       </div>
                     </div>
                   </div>

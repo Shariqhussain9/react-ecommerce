@@ -16,21 +16,26 @@ import Protected from './features/auth/Components/Protected';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectLoggedInUser } from './features/auth/authSlice';
 import { useEffect } from 'react';
-import { fetchItemByUserIdAsync } from './features/Cart/cartSlice';
 import PageNotFound from './pages/404';
 import OrderSuccess from './pages/OrderSuccess';
-import UserOrder from './features/user/components/userOrder';
-import UserProfile from './features/user/components/userProfile';
 import UserOrderPage from './pages/UserOrderPage';
 import UserProfilePage from './pages/UserProfilePage';
 import { fetchLoggedInUserAsync } from './features/user/userSlice';
 import LogOut from './features/auth/Components/LogOut';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import AdminHome from './pages/AdminHome';
+import ProtectedAdmin from '../src/features/auth/Components/ProtectedAdmin'
+import AdminProductDetailPage from './pages/AdminProductDetailPage';
+import AdminProductFormPage from './pages/AdminProductFormPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (<Protected ><Home /> </Protected>)
+  },
+  {
+    path: "/admin",
+    element: (<ProtectedAdmin ><AdminHome /> </ProtectedAdmin>)
   },
   {
     path: '/login',
@@ -51,6 +56,18 @@ const router = createBrowserRouter([
   {
     path: '/product-detail/:id',
     element: (<Protected><ProductDetailPage /></Protected>)
+  },
+  {
+    path: '/admin/product-detail/:id',
+    element: (<ProtectedAdmin><AdminProductDetailPage /></ProtectedAdmin>)
+  },
+  {
+    path: '/admin/product-form',
+    element: (<ProtectedAdmin><AdminProductFormPage /></ProtectedAdmin>)
+  },
+  {
+    path: '/admin/product-form/edit/:id',
+    element: (<ProtectedAdmin><AdminProductFormPage /></ProtectedAdmin>)
   },
   {
     path: '/order-success/:id',

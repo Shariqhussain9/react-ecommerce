@@ -40,7 +40,8 @@ export default function SignUp() {
             dispatch(createUserAsync({
               email: data.email,
               password: data.password,
-              addresses: []
+              addresses: [],
+              role: 'user'
             }))
             console.log(data)
           })}>
