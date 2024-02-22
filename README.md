@@ -65,6 +65,10 @@ This project sets up a dummy JSON Server to provide a RESTful API with endpoints
 ### Prerequisites
 
 - Node.js and npm should be installed on your machine.
+ 
+ ## Run Json Server at PORT 3000
+ 
+ $ npx json-server db.json
 
 ## EndPoints
 Products API: http://localhost:3000/products
