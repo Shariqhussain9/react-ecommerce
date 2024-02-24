@@ -2456,7 +2456,17 @@
       "password": "Qwerty123",
       "confirmPassword": "Qwerty123",
       "role": "user",
-      "addresses": []
+      "addresses": [
+        {
+          "name": "Shariq H",
+          "email": "test@gmail.com",
+          "phone": "112345635",
+          "street": "NAI MASJID NAI BASTI",
+          "city": "BAREILLY",
+          "state": "Uttar Pradesh",
+          "pinCode": "243502"
+        }
+      ]
     },
     {
       "id": "aba2",
@@ -2582,6 +2592,26 @@
       ],
       "quantity": 1,
       "user": "56a5"
+    },
+    {
+      "id": "2",
+      "title": "iPhone X",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": 899,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
+      "images": [
+        "https://cdn.dummyjson.com/product-images/2/1.jpg",
+        "https://cdn.dummyjson.com/product-images/2/2.jpg",
+        "https://cdn.dummyjson.com/product-images/2/3.jpg",
+        "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
+      ],
+      "quantity": 2,
+      "user": "aba2"
     }
   ],
   "orders": [
@@ -3077,6 +3107,63 @@
         "pinCode": "243502"
       },
       "status": "pending"
+    },
+    {
+      "id": "e86c",
+      "items": [
+        {
+          "id": "16",
+          "title": "Hyaluronic Acid Serum",
+          "description": "L'OrÃ©al Paris introduces Hyaluron Expert Replumping Serum formulated with 1.5% Hyaluronic Acid",
+          "price": 19,
+          "discountPercentage": 13.31,
+          "rating": 4.83,
+          "stock": 110,
+          "brand": "L'Oreal Paris",
+          "category": "skincare",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/16/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/16/1.png",
+            "https://cdn.dummyjson.com/product-images/16/2.webp",
+            "https://cdn.dummyjson.com/product-images/16/3.jpg",
+            "https://cdn.dummyjson.com/product-images/16/4.jpg",
+            "https://cdn.dummyjson.com/product-images/16/thumbnail.jpg"
+          ],
+          "quantity": 5,
+          "user": "55ab"
+        }
+      ],
+      "totalAmount": 95,
+      "totalItems": 5,
+      "user": {
+        "id": "55ab",
+        "email": "test@gmail.com",
+        "password": "Qwerty123",
+        "confirmPassword": "Qwerty123",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Shariq H",
+            "email": "test@gmail.com",
+            "phone": "112345635",
+            "street": "NAI MASJID NAI BASTI",
+            "city": "BAREILLY",
+            "state": "Uttar Pradesh",
+            "pinCode": "243502"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Shariq H",
+        "email": "test@gmail.com",
+        "phone": "112345635",
+        "street": "NAI MASJID NAI BASTI",
+        "city": "BAREILLY",
+        "state": "Uttar Pradesh",
+        "pinCode": "243502"
+      },
+      "status": "dispatched"
     }
   ]
 }

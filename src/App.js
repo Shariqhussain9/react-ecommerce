@@ -28,11 +28,13 @@ import ProtectedAdmin from '../src/features/auth/Components/ProtectedAdmin'
 import AdminProductDetailPage from './pages/AdminProductDetailPage';
 import AdminProductFormPage from './pages/AdminProductFormPage';
 import AdminOrdersPage from './pages/AdminOrdersPage';
+import { fetchItemByUserIdAsync } from './features/Cart/cartSlice';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (<Protected ><Home /> </Protected>)
+    // element: <Home/>
   },
   {
     path: "/admin",
@@ -107,7 +109,7 @@ function App() {
 
   useEffect(() => {
     if(user){
-      // dispatch(fetchItemByUserIdAsync(user.id));
+      dispatch(fetchItemByUserIdAsync(user.id));
       dispatch(fetchLoggedInUserAsync(user.id));
     }
   }, [dispatch, user]);

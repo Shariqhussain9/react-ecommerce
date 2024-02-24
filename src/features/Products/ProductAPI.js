@@ -8,10 +8,11 @@ export function fetchAllProducts() {
   );
 }
 
-export function fetchProductByID(id) {
+export function fetchProductById(id) {
   return new Promise(async (resolve) => {
-    const response = await fetch('http://localhost:3000/products?id='+id);
+    const response = await fetch('http://localhost:3000/products/'+id);
     const data = await response.json();
+    console.log(data);
     resolve({data});
   }
   );
@@ -38,8 +39,9 @@ export function fetchAllProductsByFilter(filter, sort, pagination) {
   return new Promise(async (resolve) => {
     const response = await fetch(`http://localhost:3000/products?`+queryString);
     const data = await response.json();
+    console.log(data);
     const totalItems = data.items;
-    resolve({data:{products:data,totalItems: +totalItems}})
+    resolve({data:{products:data, totalItems: +data.totalItems}})
   }
   );
 }

@@ -6,7 +6,7 @@ import { Navigate, useParams } from 'react-router-dom'
 import { fetchProductByIdAsync, selectProductById } from '../ProductSlice'
 import { addToCart } from '../../Cart/cartAPI'
 import { selectLoggedInUser } from '../../auth/authSlice'
-import { addToCartAsync } from '../../Cart/cartSlice'
+import { addToCartAsync, selectItems } from '../../Cart/cartSlice'
 
 
 const colors = [
@@ -47,12 +47,22 @@ export default function ProductDetail() {
   const user = useSelector(selectLoggedInUser);
   const product = useSelector(selectProductById);
   const dispatch = useDispatch();
+  const items = useSelector(selectItems);
   const params = useParams();
   const isLoading = !product;
 
   const handleCart = (e) => {
-    // e.preventDefault();
-    dispatch(addToCartAsync({...product, quantity: 1, user: user.id}))
+    if(items.findIndex((item) => item.product.id === product.id) < 0  ){
+      console.log({items, product});
+      const newItem = {
+
+        product: product.id,
+        quantity: 1,
+        user: user.id
+      }
+      dispatch(addToCartAsync(newItem));
+      alert("Product Added to your Cart");
+    }
   }
   
   useEffect(()=> {

@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import {  useDispatch } from 'react-redux';
 import {
   createUserAsync,
-  increment,
-  incrementAsync,
-  selectCount,
+
 } from '../authSlice';
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form"
@@ -14,11 +12,8 @@ export default function SignUp() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm()
-
-  console.log(errors);
   
 
   return (
@@ -37,13 +32,12 @@ export default function SignUp() {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form noValidate className="space-y-6" onSubmit={handleSubmit((data)=>{
+            console.log(data);
             dispatch(createUserAsync({
               email: data.email,
               password: data.password,
               addresses: [],
-              role: 'user'
             }))
-            console.log(data)
           })}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
