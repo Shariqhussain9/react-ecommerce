@@ -19,7 +19,8 @@ export function checkUser(loginInfo) {
       const response = await fetch('http://localhost:3000/auth/login/',{
         method: 'POST',
         body: JSON.stringify(loginInfo),
-        headers: {'content-type': 'application/json'}
+        headers: {'content-type': 'application/json'},
+        credentials: 'include'
       });
 
       if(response.ok){
@@ -45,7 +46,8 @@ export function updateUser(update) {
     const response = await fetch('http://localhost:3000/users/'+update.id, {
       method: 'PATCH',
       body: JSON.stringify(update),
-      header: {'contetnt-type': 'application/json'}
+      headers: {'content-type': 'application/json'},
+      credentials: 'include'
     });
     const data = await response.json();
     resolve({data});
@@ -55,7 +57,10 @@ export function updateUser(update) {
 
 export function signOut() {
   return new Promise(async (resolve) => {
-    
+    const response = await fetch('http://localhost:3000/auth/logout', {
+      method: 'POST',
+      credentials: 'include'
+    })
     resolve({data : 'success'});
   }
   );

@@ -7,6 +7,7 @@ import { fetchProductByIdAsync, selectProductById } from '../ProductSlice'
 import { addToCart } from '../../Cart/cartAPI'
 import { selectLoggedInUser } from '../../auth/authSlice'
 import { addToCartAsync, selectItems } from '../../Cart/cartSlice'
+import { selectUserInfo } from '../../user/userSlice'
 
 
 const colors = [
@@ -44,7 +45,7 @@ function classNames(...classes) {
 export default function ProductDetail() {
   const [selectedColor, setSelectedColor] = useState(colors[0])
   const [selectedSize, setSelectedSize] = useState(sizes[2])
-  const user = useSelector(selectLoggedInUser);
+  const user = useSelector(selectUserInfo);
   const product = useSelector(selectProductById);
   const dispatch = useDispatch();
   const items = useSelector(selectItems);
@@ -55,7 +56,6 @@ export default function ProductDetail() {
     if(items.findIndex((item) => item.product.id === product.id) < 0  ){
       console.log({items, product});
       const newItem = {
-
         product: product.id,
         quantity: 1,
         user: user.id
@@ -132,7 +132,7 @@ export default function ProductDetail() {
           </div>
           <div className="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
             <img
-              src={product.images[3]}
+              src={product.thumbnail}
               alt={product.title}
               className="h-full w-full object-cover object-center"
             />

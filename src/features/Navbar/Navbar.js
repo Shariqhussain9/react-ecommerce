@@ -19,14 +19,14 @@ const user = {
 
 const navigation = [
   { name: "Dashboard", link: "/", user: true },
-  { name: "Team", link: "#", user: true },
+  { name: "Team", link: "/", user: true },
   { name: "Admin", link: "/admin", admin: true },
   { name: "Orders", link: "/admin/orders", admin: true },
 ];
 const userNavigation = [
   { name: "My Profile", link: "/profile" },
   { name: "My Orders", link: "/orders" },
-  { name: "Sign out", link: "/logout" },
+  { name: "Sign out", link: "/auth/logout" },
 ];
 
 function classNames(...classes) {
@@ -79,7 +79,7 @@ function Navbar({ children }) {
                       <Link to='/cart'>
                       <button
                         type="button"
-                        className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        className="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                       >
                         
                         <ShoppingCartIcon

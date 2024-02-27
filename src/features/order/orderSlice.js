@@ -6,6 +6,7 @@ const initialState = {
   status: 'idle',
   currentOrder: null,
   totalOrders: 0,
+  error: null,
 };
 
 export const createOrderAsync = createAsyncThunk(
@@ -53,6 +54,10 @@ export const orderSlice = createSlice({
         state.status = 'idle';
         state.orders.push(action.payload);
         state.currentOrder = action.payload;
+      })
+      .addCase(createOrderAsync.rejected, (state, action) => {
+        state.status = 'idle';
+        state.error = action.error;
       })
       .addCase(fetchAllOrdersAsync.pending, (state) => {
         state.status = 'loading';

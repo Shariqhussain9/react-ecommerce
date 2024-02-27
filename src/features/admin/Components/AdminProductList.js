@@ -1,6 +1,7 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
+  deleteProductAsync,
   fetchAllProductsByFilterAsync,
   fetchBrandsAsync,
   fetchCategoriesAsync,
@@ -84,9 +85,14 @@ export default function AdminProductList() {
     setPage(page);
   };
 
+  const handleDelete = (id) => {
+    console.log("Delete", id);
+    dispatch(deleteProductAsync(id));
+  }
+
   useEffect(() => {
     const pagination = { _page: page };
-    dispatch(fetchAllProductsByFilterAsync({ filter, sort, pagination }));
+    dispatch(fetchAllProductsByFilterAsync({ filter, sort, pagination, admin: true}));
   }, [dispatch, filter, sort, page]);
 
   useEffect(() => {
@@ -202,7 +208,7 @@ export default function AdminProductList() {
                     </Link>
                   </div>
                   {/* This is Product content */}
-                  <ProductGrid products={products} />
+                  <ProductGrid products={products} handleDelete={handleDelete}/>
                 </div>
               </div>
             </section>
@@ -400,7 +406,7 @@ function DesktopFilter({ handleFilter, filters }) {
   );
 }
 
-function ProductGrid({ products }) {
+function ProductGrid({ products, handleDelete }) {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-0 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
@@ -438,18 +444,22 @@ function ProductGrid({ products }) {
                       </div>
                       <div>
                         <p className="text-sm font-medium text-gray-900">
-                          ${product.price}
+                          $
+                          {discountedPrice(product)}
                         </p>
                         <p className="text-sm font-medium line-through text-gray-500">
                           $
-                          {discountedPrice(product.price)}
+                          {product.price}
                         </p>
                       </div>
                     </div>
+                      {product.deleted && (<div className="text-sm py-5 fon-semibold text-red-900">
+                              Product Deleted!!!
+                      </div>)}
                   </Link>
                 </div>
               </div>
-              <div className="py-5">
+              <div className="py-5 flex justify-between ">
                 <Link
                   to={`/admin/product-form/edit/${product.id}`}
                   className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm
@@ -458,6 +468,15 @@ function ProductGrid({ products }) {
                 >
                   Edit Product
                 </Link>
+                <button
+                  to={`/admin/product-form/edit/${product.id}`}
+                  className="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm
+                    hover:bg-red-500 focus-visible:outline 
+                    focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    onClick={()=> handleDelete(product.id)}
+                >
+                  Delete Product
+                </button>
               </div>
             </div>
           ))}

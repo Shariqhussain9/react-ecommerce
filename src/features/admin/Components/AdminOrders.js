@@ -119,12 +119,12 @@ export default function AdminOrders() {
                             <div className="mr-2">
                               <img
                                 className="w-6 h-6 rounded-full"
-                                src={item.thumbnail}
-                                alt={item.title}
+                                src={item.product.thumbnail}
+                                alt={item.product.title}
                               />
                             </div>
                             <span>
-                              {item.title} -{item.quantity}
+                              {item.product.title} -{item.quantity}
                             </span>
                           </div>
                         ))}

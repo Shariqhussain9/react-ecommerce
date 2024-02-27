@@ -69,7 +69,6 @@ export const userSlice = createSlice({
   },
 });
 
-// export const { increment } = counterSlice.actions;
 
 
 export const selectUserOrders = (state) => state.user.userOrders;
